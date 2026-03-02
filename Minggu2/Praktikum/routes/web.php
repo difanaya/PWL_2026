@@ -8,6 +8,13 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PhotoController;
 
+// Route::get('/greeting', function () {
+// 	return view('hello', ['name' => 'Difa']);
+//     return view('blog.hello', ['name' => 'Difa']);
+// });
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
 //Route::resource('photos', PhotoController::class);
 Route::resource('photos', PhotoController::class)->only([
     'index', 'show'
